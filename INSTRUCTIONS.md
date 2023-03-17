@@ -47,6 +47,22 @@ The
 ### Temperature acquisition
 The python code for aquiring temperature measurements from the thermocouples is located in `/Code/temperatureLog.py`. 
 
+First, we include the necessary libraries for the SPI communication, MAX31855 amplifier and time.
+
+```
+import time
+from datetime import datetime
+import Adafruit_GPIO.SPI as SPI
+import Adafruit_MAX31855.MAX31855 as MAX31855
+```
+
+The CLK, DO, CS pins for each thermocouple amplifier have been connected to the RPi GPIO pins as described in the wiring schematic above. The next part of the script defines the three sensors according to these GPIO connections.
+
+```
+Something
+```
+
+
 ### Live plot of temperatures
 The python code for plotting the temperature measurements from the thermocouples in real-time is located in `/Code/liveSubPlot.py`.
 
