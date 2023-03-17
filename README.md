@@ -17,10 +17,4 @@ Although this was our motivation, it is worth highlighting that this thermocoupl
 
 ### Disclaimer!
 
-Thermocouples have a measurement uncertainty that can typically range $\pm 2$ degrees C. It is  
-
-## Potential Changes
-
-List of changes and whether they have been implemented.
-
-- [ ] The wiring into and out of the DIN enclosure could be tidied up using suitable bulkhead fittings or rubber grommets.
+Thermocouples have a measurement uncertainty that can typically range $\pm 2$ degrees C, depending on the manufacturer specification. Therefore, it is not guaranteed that the temperature measurements from this device will have an accuracy greater than this without performing a calibration beforehand.  
