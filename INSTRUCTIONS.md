@@ -28,6 +28,8 @@ To be added.
 
 ![Circuit schematic](./Images/TC-HAT-Schematic.png)
 
+![Thermocouple HAT for RPi](./Images/amplifiers-to-HAT-wiring.png)
+
 ### Thermocouple connectors
 
 To be added
