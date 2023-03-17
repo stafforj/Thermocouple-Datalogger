@@ -13,6 +13,7 @@ $^*$ _Note that the relay used in this build can also be wired for a Normally-Cl
 |:------------------|:-:|:-------------------------------------|
 |[Raspberry Pi](https://uk.farnell.com/raspberry-pi/rpi3-modbp/sbc-board-raspberry-pi-3-model/dp/2842228?src=raspberrypi)|1  |Raspberry Pi 3B+ single board computer. |
 |[PCB HAT](https://www.adafruit.com/product/2310)|1  |Adafruit Perma-Proto HAT without EEPROM.|
+|[Raspberry Pi Case](https://uk.rs-online.com/web/p/raspberry-pi-cases/9098132)|1 |Case for RPi and thermocouple HAT.| 
 |[Thermocouple Amplifier](https://www.adafruit.com/product/269)|3  |MAX31855 thermocouple amplifier board for Type-K thermocouples.|
 |[Thermocouple connectors](https://uk.rs-online.com/web/p/sensor-accessories/8919031)|3  |For quick connection of thermocouples to datalogger.|
 |[Thermocouple cable](https://uk.rs-online.com/web/p/thermocouple-extension-wire/2363959)|1  |Length depending on requirements.|
