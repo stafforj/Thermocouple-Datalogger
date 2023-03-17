@@ -42,7 +42,7 @@ To be added
 
 ## Python Codes
 
-The 
+Two codes are executed from the Linux terminal of the Raspberry Pi. `temperatureLog.py` records the temperatures from the thermocouples and writes the data to a text file. `liveSubPlot.py` reads this text file and plots the temperatures to the computer display screen for real-time monitoring. 
 
 ### Temperature acquisition
 The python code for aquiring temperature measurements from the thermocouples is located in `/Code/temperatureLog.py`. 
@@ -71,39 +71,32 @@ sensor2 = MAX31855.MAX31855(CLK, CS2, DO)
 sensor3 = MAX31855.MAX31855(CLK, CS3, DO)
 ```
 
-The remainder of the code...
+The remainder of the code is contained within a `while` loop. In the first part of this loop, the hot junction and internal MAX31855 temperatures for each thermocouple are acquired. The time `t` is also recorded using `datetime` to allow us to correlate temperature observations with time. 
 
+```
+    T1 = sensor1.readTempC()
+    T1_internal = sensor1.readInternalC()
+    T2 = sensor2.readTempC()
+    T2_internal = sensor2.readInternalC()
+    T3 = sensor3.readTempC()
+    T3_internal = sensor3.readInternalC()
+
+    t = datetime.now().strftime('%H:%M:%S.%f')
+```
+
+The temperatures are written to a text file that can be analysed at a later time. Here, this text file is called `TemperatureData.txt` and is located in the directory of the same directory as the python code. The text file is opened and the time and temperature data recorded above are organised and then appended to this file. After one second (`time.sleep(1)`), the file is closed and the next set of measurements are taken.
+
+```
+    fh = open("TemperatureData.txt", 'a+')
+    data = "{} {} {} {} {} {} {}\n".format(t, T1, T2, T3, T1_internal, T2_internal, T3_internal)
+    fh.write(data)
+    time.sleep(1)
+    fh.close
+```
 
 ### Live plot of temperatures
 The python code for plotting the temperature measurements from the thermocouples in real-time is located in `/Code/liveSubPlot.py`.
 
 
-The arduino code for uploading to the Arduino UNO microcontroller is located in `/Code/relay-switch.ino`. This contains a routine which turns the relay from the default open circuit (Normally-Open) to closed circuit where the outlet plug will be energised with AC from the source (in our case, single-phase 240VAC).
-
-First, the signal pin is set as an output. Here, we use `LED_BUILTIN` as the signal pin which is pin 13 on the Arduino UNO.
-
-```
-void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-```
-
-The remainder of the code involves setting up the time intervals and switching duration. These define how long the relay will switch `on` and `off` for (in milliseconds). And the switching duration is expressed by a total ON time `t` which is limited in the for loop to be less than a user-defined value (e.g., `t<1800000`). The relay is actuated by sending pin 13 `HIGH` (5VDC) and returned to NO by sending pin 13 `LOW`. In this example, the AC circuit is energised for 1 minute, turns off for 2 minutes, and will operate for a total ON time of 30 minutes. Once this target duration of 30 mins is reached, the loop exits and the relay returns to the default NO state permanently.   
-
-```
-void loop() {
-  long on=60000;      
-  long off=120000;    
-
-  for (long t=0; t<1800000; t=t+on) {    
-    digitalWrite(LED_BUILTIN, HIGH);    
-    delay(on);                          
-    digitalWrite(LED_BUILTIN, LOW);     
-    delay(off);                         
-    Serial.println(""); 
-   }
-  
-  exit(0); 
-```
 
 
