@@ -28,17 +28,20 @@ $^*$ _Note that the relay used in this build can also be wired for a Normally-Cl
 
 ### Thermocouple Amplifier to PCB HAT
 
-The relay control board requires +5VDC, GND and a signal (4-6VDC) to actuate the switch. The +5VDC and GND are connected to the pins of the Ardunio using yellow and orange cables in the image below. Pin 13 of the Arduino is connected to the signal pin of the relay control board (green cable) and used to deliver a 5VDC signal for actuating the switch.
+To be added.
 
-![Circuit schematic](./Images/TC-Hat-Schematic.png)
+![Circuit schematic](./Images/TC-HAT-Schematic.png)
 
 ### Thermocouple connectors
 
+To be added
 
 
 
 
 ## Python Codes
+
+In progress. To be added.
 
 The arduino code for uploading to the Arduino UNO microcontroller is located in `/Code/relay-switch.ino`. This contains a routine which turns the relay from the default open circuit (Normally-Open) to closed circuit where the outlet plug will be energised with AC from the source (in our case, single-phase 240VAC).
 
