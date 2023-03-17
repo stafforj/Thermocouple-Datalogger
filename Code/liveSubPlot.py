@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Create a live plot of online spectrophotometer data
+# Create a live plot of temperature data
 # Author: Jason Stafford, 04-Mar-2023 (j.stafford@bham.ac.uk)
 
 import matplotlib.pyplot as plt
@@ -54,9 +54,6 @@ def animate(i):
     ax2.set_title("$\mathbf{T2}$")
     ax2.set_ylabel('Temperature ($\mathbf{^{o}C}$)', fontweight='bold', fontsize = 9)
     ax2.grid(True)
-
-#     ttl = plt.title('$\mathbf{Liquid}$ $\mathbf{Phase}$ $\mathbf{Exfoliation}$ - $\mathbf{Process}$ $\mathbf{Monitor}$', fontweight='bold', fontsize = 32)
-#     ttl.set_position([.5, 1.1])
 
     ax3.clear()
     ax3.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
