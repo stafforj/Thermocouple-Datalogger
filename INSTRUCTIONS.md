@@ -21,23 +21,25 @@ Thermocouples measure temperature at a junction between two dissimilar metals/co
 
 ## Wiring
 
-### Thermocouple Amplifier to PCB HAT
+### Thermocouple amplifier to PCB HAT
 
-To be added.
+A schematic of the connections between the MAX31855 amplifier pins (3) and the Raspberry PI GPIO pins is shown below. The thermocouple HAT has been designed to operate using software SPI.
 
 ![Circuit schematic](./Images/TC-HAT-Schematic.png)
+
+The thermocouple amplifiers, wiring connections, and RPi header connection were soldered to the prototype PCB, creating a thermocouple HAT for three Type K thermocouples.
 
 ![Thermocouple HAT for RPi](./Images/amplifiers-to-HAT-wiring.png)
 
 ### Thermocouple HAT to RPi and Thermocouple connectors
 
-To be added
+The thermocouple HAT is then connected directly to the RPi GPIO header.
 
 ![Thermocouple HAT on RPi](./Images/TC-HAT-on-pi.png)
 
+A standard enclosure was used to house the RPi and thermocouple HAT. Thermocouple cables were connected to the amplifier pins and routed outside of the enclosure a short distance (~100 mm). Type K connectors were mounted at the ends of these cables to facilitate quick connect and disconnect actions for the thermocouples.  
+
 ![Enclosure and connector installation](./Images/assembled-with-connectors.png)
-
-
 
 
 ## Python Codes
