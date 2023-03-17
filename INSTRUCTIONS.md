@@ -84,7 +84,7 @@ The remainder of the code is contained within a `while` loop. In the first part 
     t = datetime.now().strftime('%H:%M:%S.%f')
 ```
 
-The temperatures are written to a text file that can be analysed at a later time. Here, this text file is called `TemperatureData.txt` and is located in the directory of the same directory as the python code. The text file is opened and the time and temperature data recorded above are organised and then appended to this file. After one second (`time.sleep(1)`), the file is closed and the next set of measurements are taken.
+The temperatures are written to a text file that can be analysed at a later time. Here, this text file is called `TemperatureData.txt` and is located in the same directory as the python code. The text file is opened and the time and temperature data recorded above are organised and appended to this file. After one second `time.sleep(1)`, the file is closed and the next set of measurements are taken.
 
 ```
     fh = open("TemperatureData.txt", 'a+')
