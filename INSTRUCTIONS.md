@@ -108,5 +108,18 @@ from matplotlib import style
 from datetime import datetime
 ```
 
+The figure dimensions and four subplots are set up to display the three thermocouple measurements as well as the internal temperatures for each MAX31855 thermocouple amplifier.
+
+```
+fig = plt.figure(figsize = (12,12), edgecolor='k')
+ax1 = fig.add_subplot(2,2,1)
+ax2 = fig.add_subplot(2,2,2)
+ax3 = fig.add_subplot(2,2,3)
+ax4 = fig.add_subplot(2,2,4)
+```
+
+The animate...
+
+
 
 
