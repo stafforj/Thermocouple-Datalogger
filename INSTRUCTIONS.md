@@ -31,9 +31,13 @@ To be added.
 
 ![Thermocouple HAT for RPi](./Images/amplifiers-to-HAT-wiring.png)
 
-### Thermocouple connectors
+### Thermocouple HAT to RPi and Thermocouple connectors
 
 To be added
+
+![Thermocouple HAT on RPi](./Images/TC-HAT-on-pi.png)
+
+![Enclosure and connector installation](./Images/assembled-with-connectors.png)
 
 
 
