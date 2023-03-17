@@ -118,8 +118,51 @@ ax3 = fig.add_subplot(2,2,3)
 ax4 = fig.add_subplot(2,2,4)
 ```
 
-The animate...
+The remainder of the code populates the figure with the temperature and time data that has been recorded to the `TemperatureData.txt` file. Firstly, the text file is opened and the data is split out.  
 
+```
+    graph_tempdata = open('TemperatureData.txt','r').read()
+    lines_t = graph_tempdata.split('\n')
+```
+Seven variables are preallocated for populating with the split data (time, T1, T2, T3, and internal temperatures).
+```
+    xt = []
+    y0t = []
+    y1t = []
+    y2t = []
+    y3t = []
+    y4t = []
+    y5t = []
+```
+And the data is appended to these variables within the `for` loop. This data is expressed as `float` for plotting to the figure window.
+```
+    for line in lines_t:
+        if len(line) > 1:
+            tb, T1, T2, T3, T1_int, T2_int, T3_int = line.split(' ')
+            timestringb = datetime.strptime(tb,'%H:%M:%S.%f')
+            xt.append(timestringb)
+            y0t.append(float(T1))
+            y1t.append(float(T1_int))
+            y2t.append(float(T2))
+            y3t.append(float(T2_int))
+            y4t.append(float(T3))
+            y5t.append(float(T3_int))
+```
+The plotting of the data for each variable, as well as the figure formatting, is carried out for each individual subplot in the figure window. For example, for the subplot showing `T1` data:
+ ```
+    ax1.clear()   
+    ax1.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
+    ax1.plot(xt, y0t, 'go-', linewidth = 0.5)
+    ax1.set_title("$\mathbf{T1}$")
+    ax1.set_ylabel('Temperature ($\mathbf{^{o}C}$)', fontweight='bold', fontsize = 9)
+    ax1.grid(True)
+```
 
+Finally, the figure is animated and refreshed with the temperature and time data in the text file every 3 seconds (`interval=3000`). When considering the text file is being appended with data every one second when the `temperatureLog.py` is executed, the time interval in the `liveSubPlot.py` script simply defines how frequently the figure will update and has no influence on the temporal resolution of the recordings. 
+
+```
+ani = FuncAnimation(fig, animate, interval=3000)
+plt.show()
+```
 
 
