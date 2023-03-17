@@ -44,7 +44,14 @@ To be added
 
 ## Python Codes
 
-In progress. To be added.
+The 
+
+### Temperature acquisition
+The python code for aquiring temperature measurements from the thermocouples is located in `/Code/temperatureLog.py`. 
+
+### Live plot of temperatures
+The python code for plotting the temperature measurements from the thermocouples in real-time is located in `/Code/liveSubPlot.py`.
+
 
 The arduino code for uploading to the Arduino UNO microcontroller is located in `/Code/relay-switch.ino`. This contains a routine which turns the relay from the default open circuit (Normally-Open) to closed circuit where the outlet plug will be energised with AC from the source (in our case, single-phase 240VAC).
 
