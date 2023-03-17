@@ -56,11 +56,22 @@ import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
 ```
 
-The CLK, DO, CS pins for each thermocouple amplifier have been connected to the RPi GPIO pins as described in the wiring schematic above. The next part of the script defines the three sensors according to these GPIO connections.
+The CLK, DO, CS pins for each thermocouple amplifier have been connected to the RPi GPIO pins as described in the wiring schematic above and for a software SPI configuration. The next part of the script defines the three sensors according to these GPIO connections.
 
 ```
-Something
+CLK = 25
+CS1  = 4
+DO  = 18
+
+CS2 = 24
+CS3 = 12
+
+sensor1 = MAX31855.MAX31855(CLK, CS1, DO)
+sensor2 = MAX31855.MAX31855(CLK, CS2, DO)
+sensor3 = MAX31855.MAX31855(CLK, CS3, DO)
 ```
+
+The remainder of the code...
 
 
 ### Live plot of temperatures
