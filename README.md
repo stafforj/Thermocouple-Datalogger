@@ -2,7 +2,7 @@
 
  _A RPi-controlled datalogger for measuring temperature using Type-K thermocouples, logging the temperature data to a file, and live-plotting the measured temperatures on the computer screen. Included are the build notes. Part of the Open Science Framework repository [Open2DM](https://osf.io/evupy/)_
  
-![Raspberry Pi 3B+ with Type-K thermocouple HAT](./Images/din-mounted-arduino-relay.png)
+![Raspberry Pi 3B+ with Type-K thermocouple HAT](./Images/thermocouple-datalogger.png)
 
 ### Background \& Motivation
 
