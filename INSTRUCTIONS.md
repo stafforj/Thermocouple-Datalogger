@@ -98,5 +98,15 @@ The temperatures are written to a text file that can be analysed at a later time
 The python code for plotting the temperature measurements from the thermocouples in real-time is located in `/Code/liveSubPlot.py`.
 
 
+We first add the libraries for plotting using matplotlib.
+
+```
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import matplotlib.dates as mdates
+from matplotlib import style
+from datetime import datetime
+```
+
 
 
