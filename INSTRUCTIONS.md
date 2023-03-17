@@ -37,7 +37,7 @@ The thermocouple HAT is then connected directly to the RPi GPIO header.
 
 ![Thermocouple HAT on RPi](./Images/TC-HAT-on-pi.png)
 
-A standard enclosure was used to house the RPi and thermocouple HAT. Thermocouple cables were connected to the amplifier pins and routed outside of the enclosure a short distance (~100 mm). Type K connectors were mounted at the ends of these cables to facilitate quick connect and disconnect actions for the thermocouples.  
+A standard enclosure was used to house the RPi and thermocouple HAT. Thermocouple cables were connected to the amplifier pins and routed outside of the enclosure a short distance (~100 mm). Miniature Type K connectors were mounted at the ends of these cables to facilitate quick connect and disconnect actions for the thermocouples.  
 
 ![Enclosure and connector installation](./Images/assembled-with-connectors.png)
 
