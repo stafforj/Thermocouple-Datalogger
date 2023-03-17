@@ -1,7 +1,7 @@
 #!/usr/bin/python
-# Read temperatures (using multiple MAX31855), log to a text file, and the cloud (through Thingspeak)
-# Author contributions: Jason Stafford (Imperial College, University of Birmingham), Tony DiCola (Adafruit tutorial) 
-# Updated by JS on 26-Dec-2021 (j.stafford@bham.ac.uk)
+
+# Read temperatures (using multiple MAX31855) and log to a text file.
+# Author: Jason Stafford (University of Birmingham) with acknowledgement of contributions by Tony DiCola (Adafruit tutorial) 
 
 # For MAX31855 Adafruit tutorial snippets:
 # Copyright (c) 2014 Adafruit Industries
@@ -33,10 +33,6 @@ from datetime import datetime
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
 
-
-# Uncomment one of the blocks of code below to configure your Pi to use
-# software or hardware SPI.
-
 # Raspberry Pi software SPI configuration.
 CLK = 25
 CS1  = 4
@@ -50,13 +46,7 @@ sensor2 = MAX31855.MAX31855(CLK, CS2, DO)
 sensor3 = MAX31855.MAX31855(CLK, CS3, DO)
 
 
-# Raspberry Pi hardware SPI configuration.
-#SPI_PORT   = 0
-#SPI_DEVICE = 0
-#sensor = MAX31855.MAX31855(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
-
-
-# Loop printing measurements every second.
+# Loop measurement acquisition every second.
 
 while True:
     T1 = sensor1.readTempC()
@@ -69,7 +59,7 @@ while True:
     # get time with HH:MM:SS.%f
     t = datetime.now().strftime('%H:%M:%S.%f')
 
-    # Open the data file and append to it
+    # Open the data file called "TemperatureData.txt" and append to it
     fh = open("TemperatureData.txt", 'a+')
 
     # Arrange the data to be written
